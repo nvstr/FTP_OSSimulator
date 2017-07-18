@@ -12,8 +12,7 @@
 class OSSimulator
 {
 private:
-	CPU cpu;
-	int stack[SIZE_OF_MEMORY];
+	CPU* cpu;
 public:
 	void parseFile(string fileName);
 	void executeProgram();

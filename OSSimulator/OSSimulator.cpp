@@ -7,3 +7,9 @@
 #include "Memory.h"
 
 
+int main(){
+	//new CPU:	
+	CPU* cpu = new CPU();
+	cpu->runProgram();
+	return 0;
+}

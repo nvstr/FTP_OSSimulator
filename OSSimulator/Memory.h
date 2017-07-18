@@ -13,7 +13,9 @@ public:
 	void writeAddr(int address, int data);
 	void setMode(bool set);
 	bool getMode();
+	
 private:
-	int memory[SIZE_OF_MEMORY];
+	void parseProgramFile();
+	int mem[SIZE_OF_MEMORY];
 };
 #endif 

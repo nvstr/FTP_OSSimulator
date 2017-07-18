@@ -1,18 +1,43 @@
 #ifndef CPU_H
 #define CPU_H  
 #include "Memory.h"
-
+#include "stdafx.h"
+#include "FunctionDefine.h"
+#include <stack>
+#include <iostream>
 #define TIMER_INTERRUPT_ADDR 1000
 #define INT_INSTRUCTION_ADDR 1500
 #define USER_STACK_TOP 1000
 #define SYS_STACK_TOP 2000
-
+#define IR_START_ADDRESS 100
+#define IR_STOP_ADDRESS 150
 using namespace std;
 class CPU
 {
 public:
 	CPU();
 	~CPU();
+	void runProgram();
+private:
+	int timerLimit;
+	int timeCounter;
+	int PC;
+	int SP;
+	stack <int> IR;
+	int AC;
+	int X;
+	int Y;
+	bool isInterupted;	
+	bool isFinish;
+	Memory memory;
+
+private:
+	void executeInstruction(int instruction);
+	int getTimerLimit();
+	bool isTimerUp();
+	void processTimerUpInterupt();
+	void getInstructions();
+
 	void fetchIntoIR();
 	void loadVal();
 	void loadAddr(int addr);
@@ -45,16 +70,6 @@ public:
 	void intMode(int option);
 	void iret();
 	void end();
-private:
-	int PC;
-	int SP;
-	int IR;
-	int AC;
-	int X;
-	int Y;
-	bool interrupt;
-	bool isFinish;
-	Memory memory;
 };
 
 #endif 
