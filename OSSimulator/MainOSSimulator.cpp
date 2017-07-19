@@ -7,6 +7,6 @@ using namespace std;
 
 void main(string args[])
 {
-	cout << "aa";
-	cout << args[0];
+	OSSimulator *os = new OSSimulator();
+	os->parseFile("..\\OSSimulator\\File\\file1.txt");
 }

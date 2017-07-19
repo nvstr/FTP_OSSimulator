@@ -15,7 +15,7 @@ public:
 	bool getMode();
 	
 private:
-	void parseProgramFile();
+	//void parseProgramFile();
 	int mem[SIZE_OF_MEMORY];
 };
 #endif 

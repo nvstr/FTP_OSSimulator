@@ -29,7 +29,8 @@ private:
 	int Y;
 	bool isInterupted;	
 	bool isFinish;
-	Memory memory;
+	int numOfInstruction;
+	Memory *memory;
 
 private:
 	void executeInstruction(int instruction);
@@ -38,15 +39,15 @@ private:
 	void processTimerUpInterupt();
 	void getInstructions();
 
-	void fetchIntoIR();
-	void loadVal();
+	void setIR(stack<int> val);
+	void loadVal(int val);
 	void loadAddr(int addr);
 	void loadInd(int addr);
 	void loadIdxX(int addrVal);
 	void loadIdxY(int addrVal);
 	void loadSpX();
-	void storeAddr(int val);
-	int getRand();
+	void storeAddr(int addr);
+	void getRand();
 	void putPort(int option);
 	void addX();
 	void addY();

@@ -14,6 +14,8 @@ class OSSimulator
 private:
 	CPU* cpu;
 public:
+	OSSimulator();
+	~OSSimulator();
 	void parseFile(string fileName);
 	void executeProgram();
 };
